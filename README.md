@@ -1,4 +1,4 @@
-# SpringBoot-Blog-practice
+# SpringBoot-Blog
 
 This project is designed to practice creating a blog application using Spring Boot.
 ## Main Features

@@ -25,7 +25,7 @@ public class BlogViewController {
         List<ArticleListViewResponse> articles = blogService.findAll().stream()
                 .map(ArticleListViewResponse::new)
                 .toList();
-        model.addAttribute("articles", articles); // 블로그 글 리스트 저장
+        model.addAttribute("articles", articles); // Lưu danh sách bài viết blog
 
         return "articleList";
     }
@@ -33,13 +33,13 @@ public class BlogViewController {
     @GetMapping("/articles/{id}")
     public String getArticle(@PathVariable Long id, Model model) {
         Article article = blogService.findById(id);
-        model.addAttribute("article", new ArticleViewResponse(article)); // 블로그 글 저장
+        model.addAttribute("article", new ArticleViewResponse(article)); // Lưu bài đăng trên blog
 
         return "article";
     }
 
     @GetMapping("/new-article")
-    // id 키를 가진 쿼리 파라미터의 값을 id 변수에 매핑(id는 없을 수도 있음)
+    // Ánh xạ giá trị của tham số truy vấn có khóa id tới biến id (có thể không có id)
     public String newArticle(@RequestParam(required = false) Long id, Model model) {
         if (id == null) {
             model.addAttribute("article", new ArticleViewResponse());

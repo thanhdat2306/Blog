@@ -15,11 +15,11 @@ import java.time.LocalDateTime;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class Article {
 
-    @CreatedDate // 엔티티가 생성될 때 생성 시간 저장
+    @CreatedDate // Lưu trữ thời gian tạo khi một thực thể được tạo
     @Column(name = "created_at")
     private LocalDateTime createdAt;
 
-    @LastModifiedDate // 엔티티가 수정될 때 수정 시간 저장
+    @LastModifiedDate // Tiết kiệm thời gian sửa đổi khi một thực thể được sửa đổi
     @Column(name = "updated_at")
     private LocalDateTime updatedAt;
 

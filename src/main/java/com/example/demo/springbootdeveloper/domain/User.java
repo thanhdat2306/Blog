@@ -58,31 +58,31 @@ public class User implements UserDetails {
         return password;
     }
 
-    // 계정 만료 여부 반환
+    // Trả về tài khoản đã hết hạn
     @Override
     public boolean isAccountNonExpired() {
-        // 만료되었는지 확인하는 로직
-        return true; // true -> 만료되지 않음
+        // Logic để kiểm tra xem nó đã hết hạn chưa
+        return true; //đúng -> không bao giờ hết hạn
     }
 
-    // 계정 잠금 여부 반환
+    // Trả về tài khoản có bị khóa hay không
     @Override
     public boolean isAccountNonLocked() {
-        // 잠금되었는지 확인하는 로직
-        return true; // true -> 잠금되지 않음
+        // Logic để kiểm tra xem nó có bị khóa không
+        return true; // đúng -> không bị khóa
     }
 
-    // 패스워드의 만료 여부 반환
+    // Trả về xem mật khẩu đã hết hạn chưa
     @Override
     public boolean isCredentialsNonExpired() {
-        // 만료되었는지 확인하는 로직
-        return true; // true -> 만료되지 않음
+        // Logic để kiểm tra xem nó đã hết hạn chưa
+        return true; // đúng -> không bao giờ hết hạn
     }
 
-    // 계정 사용 가능 여부 반환
+    // Trả về tính khả dụng của tài khoản
     @Override
     public boolean isEnabled() {
-        // 사용 가능한지 확인하는 로직
-        return true; // true -> 사용 가능함
+        // Logic để kiểm tra nếu có
+        return true; // đúng -> có sẵn
     }
 }

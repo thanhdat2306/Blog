@@ -20,12 +20,12 @@ public class BlogApiController {
 
     private final BlogService blogService;
 
-    // HTTP 메서드가 POST일 때 전달받은 URL과 동일하면 메서드로 매핑
+    // Khi phương thức HTTP là POST, nếu nó giống với URL nhận được thì nó sẽ được ánh xạ tới phương thức đó.
     @PostMapping("/api/articles")
-    // 요청 본문 값 매핑
+    // Yêu cầu ánh xạ giá trị nội dung
     public ResponseEntity<Article> addArticle(@RequestBody AddArticleRequest request, Principal principal) {
         Article savedArticle = blogService.save(request, principal.getName());
-        // 요청한 자원이 성공적으로 생성되었으며 저장된 블로그 글 정보를 응답 객체에 담아 전송
+        // Tài nguyên được yêu cầu đã được tạo thành công và thông tin bài đăng blog đã lưu đã được gửi trong đối tượng phản hồi.
         return ResponseEntity.status(HttpStatus.CREATED).body(savedArticle);
     }
 
@@ -41,7 +41,7 @@ public class BlogApiController {
     }
 
     @GetMapping("/api/articles/{id}")
-    // URL 경로에서 값 추출
+    // Trích xuất giá trị từ đường dẫn URL
     public ResponseEntity<ArticleResponse> findArticle(@PathVariable long id) {
         Article article = blogService.findById(id);
 
